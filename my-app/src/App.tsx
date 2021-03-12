@@ -1,27 +1,29 @@
-import React from 'react';
-import {
-  BrowserRouter as Router,
-  Link
-} from "react-router-dom";
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Link, Route } from "react-router-dom";
+import "./App.css";
 
 function App() {
   return (
     <Router>
       <div>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/dashboard">Dashboard</Link>
-          </li>
-        </ul>
-        </div>
-        </Router>
+        Fixed header
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/first">First Product</Link>
+            </li>
+            <li>
+              <Link to="/second">Second Product</Link>
+            </li>
+          </ul>
+        </nav>
+        <Route path="/" exact render={(props) => <div>Home content</div>} />
+        <Route path="/first" render={(props) => <div>first content</div>} />
+      </div>
+    </Router>
   );
 }
 
