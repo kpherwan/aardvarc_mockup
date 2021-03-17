@@ -1,3 +1,13 @@
+:root {
+  --header-color: #f7f4f4;
+  --blue-theme: #204c84;
+}
+
+* {
+  /* So 100% means 100% */
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
 }
@@ -14,14 +24,13 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: var(--header-color);
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: calc(7px + 2vmin);
+  color: var(--blue-theme);
+  padding: 15px;
 }
 
 .App-link {
@@ -35,4 +44,54 @@
   to {
     transform: rotate(360deg);
   }
+} 
+
+.SvgStyle {
+  margin: 0 5px;
+}
+
+.Profile {
+  display: inline-flex;
+}
+
+.NavBar, .NavBarExpanded {
+  height: 100%;
+  background-color: var(--blue-theme);
+  min-width: 3%;
+  margin-right: 15px;
+  padding: 10px;
+  color: white;
+  position: relative;
+}
+
+.NavBarExpanded {
+  min-width: 15%;
+}
+
+.AppBody {
+  display: flex;
+  height: 100%;
+}
+
+html, body {
+  height: 100%;
+}
+
+.verticalStretch {
+  height: 100%;
+  overflow: hidden;
+}
+
+.DrawerButton {
+  fill: var(--blue-theme);
+  background-color: white;
+  border-radius: 11px;
+  position: absolute;
+  right: -12px;
+  top: 20px;
+  cursor: pointer;
+}
+
+.Rotate {
+  transform: rotate(180deg);
 }
