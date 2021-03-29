@@ -1,8 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 import "./App.css";
+import CourseAndCompletion from "./CourseAndCompletion";
 import Drawer from "./Drawer";
 import { ReactComponent as ProfileSvg } from "./profile.svg";
+import ToolHome from "./ToolHome";
 
 function App() {
   return (
@@ -20,8 +22,8 @@ function App() {
         </div>
         <div className="AppBody">
           <Drawer />
-          <Route path="/" exact render={(props) => <div>Home content</div>} />
-          <Route path="/first" render={(props) => <div>first content</div>} />
+          <Route path="/" exact render={(props) => <ToolHome/>} />
+          <Route path="/courses_and_completion" render={(props) => <CourseAndCompletion/>} />
         </div>
     </Router>
   );

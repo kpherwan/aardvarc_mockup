@@ -62,10 +62,11 @@
   padding: 10px;
   color: white;
   position: relative;
+  padding: 10px;
 }
 
 .NavBarExpanded {
-  min-width: 15%;
+  width: 20%;
 }
 
 .AppBody {
@@ -94,4 +95,54 @@ html, body {
 
 .Rotate {
   transform: rotate(180deg);
+}
+
+.DropdownDown, .DropdownUp {
+  fill: white;
+  height: 12px;
+  width: 12px;
+}
+
+.DropdownUp {
+  transform: rotate(180deg);
+}
+
+.DropDownOption {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.DropDownOption > * {
+  margin-right: 10px;
+}
+
+.DropDownContent {
+  margin: 5px;
+  margin-left: 22px;
+  font-size: 13px;
+}
+
+.PageContent {
+  margin: 2%;
+}
+
+.Spacing {
+  margin: 12px 0;
+}
+
+.PageTitle {
+  color: var(--blue-theme);
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.PageBody {
+  margin: 25px 0;
+}
+
+label {
+  margin-right: 20px;
 }

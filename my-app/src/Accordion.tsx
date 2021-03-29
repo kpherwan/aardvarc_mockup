@@ -1,7 +1,8 @@
 import React from "react";
 import "./App.css";
+import { ReactComponent as ExpandSvg } from "./expandDropdown.svg";
 
-function Accordion(props: { children: React.ReactElement; label: string }) {
+function Accordion(props: { children: React.ReactElement[]; title: string }) {
   const [isOpen, toggleIsOpen] = React.useState(true);
 
   const toggleDrawer = () => {
@@ -10,13 +11,21 @@ function Accordion(props: { children: React.ReactElement; label: string }) {
 
   if (isOpen) {
     return (
-    <div onClick={toggleDrawer}>
-        {props.label}
-        {props.children}
-    </div>
+      <div className="Spacing">
+        <div onClick={toggleDrawer} className="DropDownOption">
+          <ExpandSvg className="DropdownUp" />
+          {props.title}
+        </div>
+        <div className="DropDownContent">{props.children}</div>
+      </div>
     );
   } else {
-    return <div onClick={toggleDrawer}>{props.label}</div>;
+    return (
+      <div onClick={toggleDrawer} className="DropDownOption Spacing">
+        <ExpandSvg className="DropdownDown" />
+        {props.title}
+      </div>
+    );
   }
 }
 
